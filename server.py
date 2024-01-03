@@ -7,9 +7,8 @@ class GreetingMaker(object):
         return "Hello, " + name + ". Have a great day!"
 
 
-# Exécution du serveur
-daemon = Pyro4.Daemon()  # Crée un serveur Pyro
-uri = daemon.register(GreetingMaker)  # Enregistre l'objet comme un Pyro objet
+daemon = Pyro4.Daemon()
+uri = daemon.register(GreetingMaker)
 
-print("Ready. Object uri =", uri)  # Imprime l'URI de l'objet
-daemon.requestLoop()  # Commence la boucle d'écoute pour les requêtes
+print("Ready. Object uri =", uri)
+daemon.requestLoop()
